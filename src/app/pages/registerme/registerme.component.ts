@@ -10,17 +10,15 @@ import { Student } from 'src/app/shared/classes/student';
 })
 export class RegistermeComponent implements OnInit {
 
-  form:FormGroup;
+
+ form;
  student = new Student();
  isCreated: false;
  birthday: Date;
 
-  constructor(private studentService: StudentService) { }
+  constructor(private studentService: StudentService,
+     ) {
 
-  ngOnInit(): void {
-
-
-    if(!this.isCreated){
       this.form = new FormGroup({
         lastName: new FormControl(''),
         firstName: new FormControl(''),
@@ -33,14 +31,18 @@ export class RegistermeComponent implements OnInit {
         cityCode: new FormControl(''),
         cityName: new FormControl(''),
 
+   });
 
-      });
-    } else
-    {
+      }
 
-      this.form = new FormGroup({
+  ngOnInit(): void {
+
+
+     if (this.isCreated)
+      {this.form = new FormGroup({
       lastName: new FormControl(this.student.lastName),
       firstName: new FormControl(this.student.firstName),
+      birthday: new FormControl(this.student.birthday),
       email: new FormControl(this.student.email),
       phoneNumber: new FormControl(this.student.phoneNumber),
       password: new FormControl(this.student.password),
@@ -58,12 +60,12 @@ export class RegistermeComponent implements OnInit {
       this.student.firstName= this.form.get('firstName').value;
       this.student.lastName= this.form.get('lastName').value;
       this.student.birthday= this.form.get('birthday').value;
-      //   this.student.firstName= this.form.get('firstName').value;
-    //   this.student.firstName= this.form.get('firstName').value;
-    //   this.student.firstName= this.form.get('firstName').value;
-    //   this.student.firstName= this.form.get('firstName').value;
-    //   this.student.firstName= this.form.get('firstName').value;
-    //   this.student.firstName= this.form.get('firstName').value;
+      this.student.cityCode= this.form.get('cityCode').value;
+      this.student.cityName= this.form.get('cityName').value;
+      this.student.streetName= this.form.get('streetName').value;
+      this.student.streetNumber= this.form.get('streetNumber').value;
+      this.student.password= this.form.get('password').value;
+      this.student.phoneNumber= this.form.get('phoneNumber').value;
 
      this.studentService.postStudent(this.student).subscribe(data=>{
 

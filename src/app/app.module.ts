@@ -1,36 +1,34 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
+import { registerLocaleData } from '@angular/common';
+import localeFr from '@angular/common/locales/fr';
+registerLocaleData(localeFr, 'fr');
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
+
 import { HomeComponent } from './pages/home/home.component';
 import { RegistermeComponent } from './pages/registerme/registerme.component';
-import { ScoreComponent } from './pages/score/score.component';
+import { LoginComponent } from './pages/login/login.component';
 import { CourseComponent } from './pages/course/course.component';
-
-import { MatPaginatorModule } from '@angular/material/paginator';
-import { MatSortModule } from '@angular/material/sort';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule} from '@angular/material/input';
 import { MatTableModule } from '@angular/material/table';
-import { MatIconModule } from '@angular/material/icon';
-import { MatDialogModule } from '@angular/material/dialog';
-import { MatGridListModule } from '@angular/material/grid-list';
-import { MatSelectModule } from '@angular/material/select';
-import { MatButtonModule } from '@angular/material/button';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
-
+import { MatSelect, MatSelectModule } from '@angular/material/select';
+import { MatOption, MatOptionModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     RegistermeComponent,
-    ScoreComponent,
+    HomeComponent,
+    HomeComponent,
+    LoginComponent,
     CourseComponent,
+
 
   ],
   imports: [
@@ -38,14 +36,10 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    MatFormFieldModule,
-    MatIconModule,
-
-    HttpClientModule
-
-
-
-
+    HttpClientModule,
+    MatTableModule,
+    MatSelectModule,
+    MatOptionModule
 
   ],
   providers: [],
