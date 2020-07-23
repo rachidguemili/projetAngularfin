@@ -22,7 +22,7 @@ export class StudentService {
   }
 
   postStudent(student): Observable<any>{
-    return this.http.post<any>(this.url, student);
+    return this.http.post<any>(this.url+"students", student);
   }
   putStudent(student): Observable<any>{
     return this.http.put<any>( this.url+ student.id, student);

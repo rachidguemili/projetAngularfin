@@ -33,9 +33,9 @@
 <mat-form-field>
 
          <label for="birthday">Date de naissance</label>
-    <input type="date" name="birthday" [ngModel]="student.birthday | date: 'yyyy-MM-dd'" (ngModelChange)="student.birthday=$event"  required>
+    <input type="date" formControlName="birthday" [ngModel]="student.birthday | date: 'yyyy-MM-dd'" (ngModelChange)="student.birthday=$event"  required>
     <mat-form-field>
 
-<button>
+<button (click)="registerMe()">
   <mat-icon> touch_app </mat-icon>
   </button>

@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Student } from 'src/app/shared/classes/student';
-import {MatDatepickerModule, MatDatepickerToggle, MatDatepicker} from '@angular/material/datepicker';
-import { StudentService } from 'src/app/services/student/student.service';
+ import { StudentService } from 'src/app/services/student/student.service';
 
 @Component({
   selector: 'amm-registerme',
@@ -12,7 +11,7 @@ import { StudentService } from 'src/app/services/student/student.service';
 export class RegistermeComponent implements OnInit {
 
   form:FormGroup;
- student : Student;
+ student = new Student();
  isCreated: false;
  birthday: Date;
 
@@ -25,7 +24,7 @@ export class RegistermeComponent implements OnInit {
       this.form = new FormGroup({
         lastName: new FormControl(''),
         firstName: new FormControl(''),
-        birthday: new FormControl(new Date()),
+        birthday: new FormControl(''),
         email: new FormControl(''),
         phoneNumber: new FormControl(''),
         password: new FormControl(''),
