@@ -18,6 +18,11 @@ import { CourseComponent } from './pages/course/course.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatSelect, MatSelectModule } from '@angular/material/select';
 import { MatOption, MatOptionModule } from '@angular/material/core';
+import { AdminComponent } from './pages/admin/admin/admin.component';
+import { TeacherlistComponent } from './pages/teacherlist/teacherlist/teacherlist.component';
+import { ClasseComponent } from './pages/classe/classe/classe.component';
+import { MeetComponent } from './pages/meet/meet/meet.component';
+import { CheckpointComponent } from './pages/checkpoint/checkpoint/checkpoint.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +33,11 @@ import { MatOption, MatOptionModule } from '@angular/material/core';
     HomeComponent,
     LoginComponent,
     CourseComponent,
+    AdminComponent,
+    TeacherlistComponent,
+    ClasseComponent,
+    MeetComponent,
+    CheckpointComponent,
 
 
   ],

@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ScoreComponent implements OnInit {
 
+  scores: string[];
+
   constructor() { }
 
   ngOnInit(): void {
+
   }
+
+  // get la liste des scores de l etudiant
 
 }
