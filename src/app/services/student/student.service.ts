@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 export class StudentService {
 
 
-  private  url = "http://localhost:8080/";
+  private  url = "http://localhost:8080/students/";
 
   constructor(private http: HttpClient) { }
 
@@ -22,7 +22,7 @@ export class StudentService {
   }
 
   postStudent(student): Observable<any>{
-    return this.http.post<any>(this.url+"students", student);
+    return this.http.post<any>(this.url, student);
   }
   putStudent(student): Observable<any>{
     return this.http.put<any>( this.url+ student.id, student);

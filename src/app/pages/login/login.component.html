@@ -1,0 +1,15 @@
+
+<router-outlet></router-outlet>
+
+<div class="back">
+  <ng-form name="ngLogin" >
+    <fieldset class="loginForm">
+      <h4>Connexion</h4>
+      <label for="username">Adresse Mail :</label>
+      <input type="text" name="login"/>
+      <label for="password">Mot de passe :</label>
+      <input type="password" ngModel="password" name="password"/>
+    <button type="submit" [routerLink]="['/register']"   onsubmit="valider()" class="valider">Valider</button>
+  </fieldset>
+</ng-form>
+</div>

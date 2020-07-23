@@ -1,1 +1,48 @@
-<p>course works!</p>
+
+<router-outlet></router-outlet>
+
+<mat-form-field  >
+
+<mat-select >
+  <mat-option *ngFor="let course of courses" [value]="course">{{course.name}}</mat-option>
+</mat-select>
+</mat-form-field>
+
+
+ <mat-table [dataSource]="coursesChoosen" >
+  <mat-header-row *matHeaderRowDef="headers" > </mat-header-row>
+  <mat-row *matRowDef="let row;columns: headers;" class="mat-row"></mat-row>
+
+  <ng-container matColumnDef="name">
+    <mat-header-cell *matHeaderCellDef >Nom </mat-header-cell>
+    <mat-cell *matCellDef="let course">{{course.name}}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="actions">
+    <mat-header-cell *matHeaderCellDef >selection </mat-header-cell>
+
+  <input  type="checkbox"    (change)="isChecked($event)">
+</ng-container>
+
+   </mat-table>
+
+<!-- <table class="table">
+  <thead>
+    <tr>
+
+       <th>Intitule des cours</th>
+
+
+
+    </tr>
+ </thead>
+ <tbody>
+    <tr *ngFor="let course of coursesChoosen" value="course">
+       <th>{{course.name }}</th>
+
+       <td>
+          <button type="button" >Delete</button>
+       </td>
+    </tr>
+ </tbody>
+
+</table> -->
