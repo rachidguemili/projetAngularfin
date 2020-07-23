@@ -1,0 +1,41 @@
+<p>registerme works!</p>
+
+
+<h2>Informations Etudiant</h2>
+
+<form [formGroup]="form" class="form">
+
+
+     <div>
+      <label class="label"> Identité</label>
+      <br>
+         <label>Nom</label>
+         <input type ="text" formControlName="lastName" matInput placeholder="Nom *">
+         <label>Prenom</label>
+         <input type ="text" formControlName="firstName" matInput placeholder="Prénom *">
+         <label>Date de naissance</label>
+         <input type ="text" formControlName="phoneNumber" matInput placeholder="Numéro de téléphone *">
+          <label>mot de passe </label>
+         <input type ="text" type="password" formControlName="password" matInput placeholder="Password *">
+         <label>Email</label>
+         <input type ="text" formControlName="email" matInput placeholder="Email *">
+         <label>Telephone</label>
+         <input type ="text" formControlName="phoneNumber" matInput placeholder="Numéro de téléphone *">
+         <label>Numero</label>
+         <input type ="text" formControlName="streetNumber" matInput placeholder="Numéro de rue *">
+         <label>Rue</label>
+         <input type ="text" formControlName="streetName" matInput placeholder="Nom de rue *">
+         <label>Ville</label>
+         <input type ="text" formControlName="cityName" matInput placeholder="Ville *">
+         <label>Code postal</label>
+         <input type ="number" formControlName="cityCode" matInput placeholder="Code postal*">
+
+<mat-form-field>
+
+         <label for="birthday">Date de naissance</label>
+    <input type="date" formControlName="birthday" [ngModel]="student.birthday | date: 'yyyy-MM-dd'" (ngModelChange)="student.birthday=$event"  required>
+    <mat-form-field>
+
+<button (click)="registerMe()">
+  <mat-icon> touch_app </mat-icon>
+  </button>
